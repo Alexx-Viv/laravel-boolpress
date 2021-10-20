@@ -3,7 +3,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Benvenuti nel mio sito</div>
+                    <Header :title="title" />
                     <div class="card-body">Sito in costruzione</div>
                 </div>
             </div>
@@ -12,7 +12,16 @@
 </template>
 
 <script>
+import Header from "./Header.vue";
 export default {
-    name: "App"
+    name: "App",
+    data() {
+        return {
+            title: "Il mio Blog!"
+        };
+    },
+    components: {
+        Header
+    }
 };
 </script>
