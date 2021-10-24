@@ -48,15 +48,6 @@
         </footer>
     </div>
     @section('scripts')
-        <script>
-            const deleteButton = document.querySelectorAll('.delete-button');
-            deleteButton.forEach(form => {
-                form.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    const conf = confirm('Sicuro di voler eliminare questo post?');
-                    if (conf) this.submit();
-                })
-            });
-        </script>
+        <script src="{{ asset('js/confirm-delete.js') }}"></script>
     @endsection
 @endsection
