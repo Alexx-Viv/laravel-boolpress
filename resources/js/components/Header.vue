@@ -1,5 +1,7 @@
 <template>
-    <div class="card-header">Benvenuti su {{ title }}</div>
+    <header class="mt-4">
+        <h1 class="text-center">Benvenuti su {{ title }}</h1>
+    </header>
 </template>
 
 <script>
@@ -9,4 +11,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+header {
+    color: forestgreen;
+}
+</style>
