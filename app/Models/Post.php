@@ -7,10 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    protected $fillable = ['title', 'content', 'slug', 'image'];
+    protected $fillable = ['title', 'content', 'slug', 'image', 'category_id'];
 
     public function getCreatedDate($column, $format = 'd-m-Y H:i:s')
     {
         return Carbon::create($this->$column)->format($format);
+    }
+
+    public function category()
+    {
+        return $this->belongsTo('App\Models\Category');
     }
 }

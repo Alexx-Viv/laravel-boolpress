@@ -3,8 +3,11 @@
 @section('content')
     <div class="container">
         <h1>{{ $post->title }}</h1>
+    <h4>Categoria: @if ($post->category){{ $post->category->name }} @else nessuna
+                categoria @endif
+        </h4>
         <p>{{ $post->content }}</p>
-        <address>{{ $post->getCreatedDate('created_at') }}</address>
+        <address>Pubblicato il: {{ $post->getCreatedDate('created_at') }}</address>
         <div class="d-flex justify-content-end"><a class="btn btn-secondary" href="{{ route('admin.posts.index') }}">Torna
                 alla lista</a>
             <a href="{{ route('admin.posts.edit', $post->id) }}" class="btn btn-warning ml-2">Modifica</a>

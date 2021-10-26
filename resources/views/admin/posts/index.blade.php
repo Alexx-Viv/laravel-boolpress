@@ -14,6 +14,7 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Titolo</th>
+                    <th scope="col">Categoria</th>
                     <th scope="col">Creato il</th>
                     <th scope="col"></th>
                 </tr>
@@ -23,6 +24,12 @@
                     <tr>
                         <th scope="row">{{ $post->id }}</th>
                         <td>{{ $post->title }}</td>
+                        <td>
+                            @if ($post->category)
+                                <span class="badge badge-pill badge-info">{{ $post->category->name }} </span>
+                            @else -
+                            @endif
+                        </td>
                         <td>{{ $post->getCreatedDate('created_at', 'd-m-Y') }}</td>
                         <td class="d-flex justify-content-end">
                             <a href="{{ route('admin.posts.show', $post->id) }}" class="btn btn-primary ml-2">Dettagli</a>
